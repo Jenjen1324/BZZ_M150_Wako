@@ -1,5 +1,7 @@
 <html>
   <head>
+  
+  <?php include("res/head.php"); ?>
     <title>Einkaufen in Europa</title>
 
 <?php
@@ -62,9 +64,9 @@ fwrite($bs, "\n");
 
   </head>
   <body>
-   <h1>Vielen Dank <?=$name ?> für Ihre Bestellung</h1>
+   <h1>Vielen Dank <?=$name ?> fÃ¼r Ihre Bestellung</h1>
  
-   Zurück zur <a href="produkte.php">Produkteübersicht</a>
+   ZurÃ¼ck zur <a href="produkte.php">ProdukteÃ¼bersicht</a>
   
 
 

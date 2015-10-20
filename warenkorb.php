@@ -1,5 +1,6 @@
 <html>
  <head>
+ <?php include("res/head.php"); ?>
   <title> 
     Einkaufen in Europa
   </title>
@@ -36,7 +37,7 @@ fclose($WAKO);
 <table>
   <tr bgcolor="#cccccc"><td>Nummer</td><td>Name</td><td>Preis</td><td>Anzahl</td><td>Total</td></tr>
 <?php
-$tp = 0; // Die Variable $tp erhält den Wert Null (0)
+$tp = 0; // Die Variable $tp erhÃ¤lt den Wert Null (0)
 foreach($wako as $artikel=> $anzahl) {
   $preis = $artikel_preis[$artikel] * $anzahl;
   $tp += $preis;
@@ -53,16 +54,16 @@ foreach($wako as $artikel=> $anzahl) {
 
 
 <p>
-Sie haben Waren für einen Totalbetrag von <b><?php
+Sie haben Waren fÃ¼r einen Totalbetrag von <b><?php
   $out = sprintf("%0.2f", $tp);
   echo "CHF " . $out;
 ?></b> in Ihrem Warenkorb.
 </p>
 
-<h2>Weitere Einkäufe</h2>
+<h2>Weitere EinkÃ¤ufe</h2>
 
 <p>
-Zurück zur <a href="produkte.php">Artikellsite</a>
+ZurÃ¼ck zur <a href="produkte.php">Artikellsite</a>
 </p>
 
   <form method="post" action="bestellung.php">
