@@ -74,7 +74,7 @@ foreach($wako as $artikel=> $anzahl) {
   echo "  <input type=\"hidden\" name=\"Art_" . $artikel . "\" value=\"" . $anzahl . "\" />\n";
 }
 
-echo "  <input type=\"hidden\" name=\"Total\" value=\"" . $tp . "\" />\n";
+/*echo "  <input type=\"hidden\" name=\"Total\" value=\"" . $tp . "\" />\n";*/
 
 ?>
 
