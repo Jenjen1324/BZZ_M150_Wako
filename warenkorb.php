@@ -19,13 +19,15 @@ while($arr = fscanf($WAKO, "%d\t%d\n")) { //
 fclose($WAKO);
 
 $artnr = $_GET['artikel'];
+if(isset($artikel_namen[$artnr]))
+{
 
-if($wako[$artnr]) {
-  $wako[$artnr] ++;
-} else {
-  $wako[$artnr] = 1;
+  if($wako[$artnr]) {
+    $wako[$artnr] ++;
+  } else {
+    $wako[$artnr] = 1;
+  }
 }
-
 // save
 $WAKO = fopen("warenkorb.txt", "w");
 foreach($wako as $artikel=> $anzahl) {
