@@ -1,5 +1,6 @@
 <html>
  <head>
+ <?php include("res/head.php"); ?>
   <title> 
     Einkaufen in Europa
   </title>
