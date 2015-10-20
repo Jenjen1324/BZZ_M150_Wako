@@ -1,1 +1,1 @@
-<meta name="charset" value="UTF-8">
+<meta charset="UTF-8">
