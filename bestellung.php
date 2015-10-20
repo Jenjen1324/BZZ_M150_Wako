@@ -1,10 +1,12 @@
 <html>
   <head>
-  
+
   <?php include("res/head.php"); ?>
     <title>Einkaufen in Europa</title>
 
 <?php
+
+include("res/plist.php");
 
 $wk = fopen("warenkorb.txt", "w");
 fwrite($wk, "");
@@ -39,9 +41,15 @@ foreach($_POST as $var_name => $var_value) {
   if($var_name == "kredit") {
     $kredit = $var_value; 
   }
-  if($var_name == "Total") {
+  /*if($var_name == "Total") {
     $total = $var_value; 
-  }
+  }*/
+}
+
+// Fixes total manipulation
+$total = 0;
+foreach($abs as $artNr => $artCount) {
+  $total += $artikel_preis[$artNr] * $artCount;
 }
 
 $bs = fopen("bestellungen.txt", "a+");
