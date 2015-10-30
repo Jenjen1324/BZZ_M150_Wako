@@ -5,8 +5,11 @@ include("res/plist.php");
 function addItem($item) {
   if($_SESSION['items'][$item])
     $_SESSION['items'][$item]++;
-  else
-    $_SESSION['items'][$item] = 1;
+  else {
+    if(isset($artikel_namen[$item])) {
+      $_SESSION['items'][$item] = 1;
+    }
+  }
 }
 
 function getItems() {
