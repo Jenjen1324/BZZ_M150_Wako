@@ -1,3 +1,31 @@
+<?php 
+session_start();
+include("res/plist.php");
+
+function addItem($item) {
+  if($_SESSION['items'][$item])
+    $_SESSION['items'][$item]++;
+  else
+    $_SESSION['items'][$item] = 1;
+}
+
+function getItems() {
+  if($_SESSION['items'])
+  {
+    return $_SESSION['items'];
+  } else {
+    return array();
+  }
+}
+
+if($_GET['artikel']) {
+  addItem($_GET['artikel']);
+  header("Location: warenkorb.php");
+}
+
+
+$wako = getItems();
+ ?>
 <html>
  <head>
  <?php include("res/head.php"); ?>
@@ -10,8 +38,9 @@
 
 <?php
 
-include("res/plist.php");
 
+
+/*
 $WAKO = fopen("warenkorb.txt", "r"); // $WAKO = Filehandle auf "warenkorb.txt"
 while($arr = fscanf($WAKO, "%d\t%d\n")) { // 
   $wako[$arr[0]] = $arr[1];
@@ -27,13 +56,19 @@ if(isset($artikel_namen[$artnr]))
   } else {
     $wako[$artnr] = 1;
   }
+
+
 }
 // save
 $WAKO = fopen("warenkorb.txt", "w");
 foreach($wako as $artikel=> $anzahl) {
   fwrite($WAKO, "" . $artikel . "\t" . $anzahl . "\n");
 }
-fclose($WAKO);
+fclose($WAKO);*/
+
+
+
+
 ?>
 
 <table>

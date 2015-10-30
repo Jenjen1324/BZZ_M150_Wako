@@ -1,3 +1,11 @@
+<?php 
+// Session zerstören um den wako zu leeren
+
+session_start();
+session_destroy();
+
+?>
+
 <html>
   <head>
 
